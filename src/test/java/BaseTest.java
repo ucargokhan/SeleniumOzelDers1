@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BaseTest {
 
     protected WebDriver driver;
-    PracticeFormPage practiceFormPage;
+    WebPage webPage;
 
     @BeforeAll
     public void setUp()
@@ -19,9 +19,9 @@ public class BaseTest {
         driver = new ChromeDriver();
         System.out.println("Driver ayağa kaldırıldı.");
 
-        practiceFormPage = new PracticeFormPage(driver);
-
-        driver.get("https://demoqa.com/automation-practice-form");
+        webPage = new WebPage(driver);
+        driver.manage().window().maximize();
+        driver.get("https://www.amazon.com/");
         System.out.println("İlgili test web sayfası açıldı.");
     }
 
